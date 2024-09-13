@@ -1,0 +1,21 @@
+todo_list = []
+
+while True:
+    action = input("Type add or show or edit or exit: ").strip()
+
+    match action:
+        case 'add':
+            task = input("Enter the task: ")
+            todo_list.append(task)
+
+        case "show":
+            for index, item in enumerate(todo_list):
+                print(index, "-", item)
+
+        case 'edit':
+            task_no = int(input("Enter the task number: "))
+            todo_list[task_no - 1] = input("Enter the edited task: ")
+        case 'exit':
+            break
+
+print("End of Operations...")
